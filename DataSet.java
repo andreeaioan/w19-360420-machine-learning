@@ -248,8 +248,17 @@ public class DataSet {
   ////////////////////////////////////////////////////////////////////////////
 
   ////////////////////////////////////////////////////////////////////////////
-  //Task 4
-  public static double distanceTwoPoints(){
-    
+
+  // Task 4 : make a method here called distanceEuclid
+
+  public static double distanceEuclid (DataPoint p1, DataPoint p2)
+  {
+  double distanceSq = 0;
+  for (int i=0; i < p1.x.length; i++)
+    {
+      distanceSq = distanceSq + Math.pow((p1.x[i]-p2.x[i]),2);
+    }
+  double distance = Math.pow(distanceSq,0.5);
+  return distance;
   }
 }
