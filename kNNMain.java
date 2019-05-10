@@ -10,15 +10,27 @@ public class kNNMain{
 
     // TASK 1: Use command line arguments to point DataSet.readDataSet method to
     // the desired file. Choose a given DataPoint, and print its features and label
+    String PATH_TO_DATA = args[0];
+    System.out.println(PATH_TO_DATA);
+    List<DataPoint> fullSet = DataSet.readDataSet(PATH_TO_DATA);
+    DataPoint givenDataPoint  = fullSet.get(32);
+    System.out.println(givenDataPoint.getLabel());
 
+    String printableX = Arrays.toString (givenDataPoint.getX());
 
+    System.out.println(printableX);
 
     //TASK 2:Use the DataSet class to split the fullDataSet into Training and Held Out Test Dataset
-
+    double testPercentage = 0.3;
+    double trainPercentage = 0.7;
+    List<DataPoint> testSet= DataSet.getTestSet(fullSet, testPercentage);
+    List<DataPoint> trainSet= DataSet.getTrainingSet(fullSet, trainPercentage);
+    //System.out.println(trainSet);
+    //System.out.println(testSet);
 
     // TASK 3: Use the DataSet class methods to plot the 2D data (binary and multi-class)
 
-
+    //DO NOT DO THIS
 
     // TASK 4: write a new method in DataSet.java which takes as arguments to DataPoint objects,
     // and returns the Euclidean distance between those two points (as a double)
