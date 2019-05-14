@@ -13,12 +13,12 @@ public class kNNMain{
     String PATH_TO_DATA = args[0];
     System.out.println(PATH_TO_DATA);
     List<DataPoint> fullSet = DataSet.readDataSet(PATH_TO_DATA);
-    DataPoint p1  = fullSet.get(32);
+    DataPoint dp  = fullSet.get(32);
     DataPoint p2 = fullSet.get(40);
-    System.out.println(p1.getLabel());
-    System.out.println(p1.getX());
+    System.out.println(dp.getLabel());
+    System.out.println(dp.getX());
 
-    String printableX = Arrays.toString (p1.getX());
+    String printableX = Arrays.toString (dp.getX());
       System.out.println(printableX);
 
     //TASK 2:Use the DataSet class to split the fullDataSet into Training and Held Out Test Dataset
@@ -36,10 +36,17 @@ public class kNNMain{
     // TASK 4: write a new method in DataSet.java which takes as arguments to DataPoint objects,
     // and returns the Euclidean distance between those two points (as a double)
 
-    System.out.println(DataSet.distanceEuclid(p1,p2));
+    System.out.println(DataSet.distanceEuclid(dp,p2));
 
     // TASK 5: Use the KNNClassifier class to determine the k nearest neighbors to a given DataPoint,
     // and make a print a predicted target label
+
+    //DataPoint [] nearNeighbors;
+    //nearNeighbors = KNNClassifier.getNearestNeighbors(fullSet, p1);
+
+    //KNNClassifier p = new KNNClassifier ();
+    String prediction = KNNClassifier.predict(fullSet, dp);
+    System.out.println("Predicted label: "+prediction);
 
 
 

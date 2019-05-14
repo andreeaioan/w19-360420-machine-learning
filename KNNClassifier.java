@@ -27,7 +27,7 @@ public class KNNClassifier{
   /////////////////////////////////////////////////////////////////////////
   // Constructor
   /////////////////////////////////////////////////////////////////////////
-  public KNNClassifier(int k){
+  public  KNNClassifier(int k){
     this.k = k;
   }
   /////////////////////////////////////////////////////////////////////////
@@ -131,6 +131,7 @@ public int getIndexOfLargest( int[] array )
   String[] labelsArray = labelsSet.toArray(new String[labelsSet.size()]);
   int[] labelsCounts = new int[labelsArray.length];
 
+  System.out.println(Arrays.toString(labelsArray));
 
   for (int i=0; i<labelsArray.length;i++){
       labelsCounts[i] = getLabelFrequency(labelsArray[i],nearestNeighbors);
