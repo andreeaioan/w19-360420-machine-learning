@@ -44,15 +44,30 @@ public class kNNMain{
     //DataPoint [] nearNeighbors;
     //nearNeighbors = KNNClassifier.getNearestNeighbors(fullSet, p1);
 
-    //KNNClassifier p = new KNNClassifier ();
-    String prediction = KNNClassifier.predict(fullSet, dp);
-    System.out.println("Predicted label: "+prediction);
+    KNNClassifier p = new KNNClassifier (5);
+    String predicted = p.predict(trainSet, testSet.get(32));
+    System.out.println("Predicted label: "+predicted);
 
 
 
     // TASK 6: loop over the datapoints in the held out test set, and make predictions for Each
     // point based on nearest neighbors in training set. Calculate accuracy of model.
 
+
+    int right=0;
+    int total=0;
+
+    for (int i=0; i<1000; i++)
+    {
+      String predict = p.predict(trainSet, testSet.get(i));
+      if(predict.equals(testSet.get(i).getLabel(i)))
+      {
+        right++;
+      }
+      total++;
+    }
+    double percentRight = (right/total)*100;
+    System.out.println("Accuracy: "+ percentRight);
 
   }
 

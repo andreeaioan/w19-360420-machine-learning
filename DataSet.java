@@ -13,7 +13,7 @@ import javax.swing.*;
   -mostly static methods which operate on the data set
  */
 public class DataSet {
-
+  
   //////////////////////////////////////////////////////////////////////////////////////////////////
   // method that creates a list of dataPoints
   public static List<DataPoint> readDataSet(String file) throws FileNotFoundException {
