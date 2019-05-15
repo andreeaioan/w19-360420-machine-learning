@@ -59,18 +59,24 @@ public class kNNMain{
 
     for (int i=0; i<1000; i++)
     {
-      String predict = p.predict(trainSet, testSet.get(i));
-      if(predict.equals(testSet.get(i).getLabel(i)))
+      for (int j=0; j<testSet.length; j++)
       {
-        right++;
-      }
-      total++;
-    }
-    double percentRight = (right/total)*100;
-    System.out.println("Accuracy: "+ percentRight);
+        String predict = p.predict(trainSet, testSet.get(j));
+        if(predict == (testSet.get(j).getLabel(j)))
+        {
+          right++;
+        }
+        total++;
 
+        double percentRight = (right/total)*100;
+        System.out.println("Accuracy: "+ percentRight);
+      }
+
+    double [] accuracies = new double [999];
+    accuracies[i] = percentRight;
   }
 
+}
   public static double mean(double[] arr){
     /*
     Method that takes as an argument an array of doubles
