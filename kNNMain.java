@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 
 
+
 public class kNNMain{
 
   public static void main(String... args) throws FileNotFoundException{
@@ -59,7 +60,7 @@ public class kNNMain{
 
     for (int i=0; i<1000; i++)
     {
-      for (int j=0; j<testSet.length; j++)
+      for (int j=0; j<testSet.size(); j++)
       {
         String predict = p.predict(trainSet, testSet.get(j));
         if(predict == (testSet.get(j).getLabel(j)))
