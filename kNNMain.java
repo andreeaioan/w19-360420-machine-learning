@@ -76,6 +76,12 @@ public class kNNMain{
     accuracies[i] = percentRight;
   }
 
+  double mean = mean(accuracies[]);
+  System.out.println("The mean is: "+mean);
+
+  double stdDev = standardDeviation(accuracies[]);
+  System.out.println("The standard deviation is: "+stdDev);
+
 }
   public static double mean(double[] arr){
     /*
